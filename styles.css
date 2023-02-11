@@ -1,11 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom left, #ffecd2 0%, #fcb69f 100%);
+
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: 500;
+    color: darkblue;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* height: 100vh; */
+    /* margin-left: 3vw;
+    margin-right: 3vw; */
+
+    min-width: 300px;
+}
+
+@media (max-width: 400px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: 1000px) {
+    body {
+        display: grid;
+    }
+    .grid-container {
+        max-width: 80vw;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+.grid-span-2 {
+    grid-column: span 2;
+}
+
+.titles-container {
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+    font-size: 3rem;
+}
+
+.figure-container {
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.newsletter {
+    /* border: 2px solid green; */
+    display: grid;
+    padding: 1rem;
+    height: 600px;
+}
+.newsletter > p {
+    align-self: center;
+    justify-self: center;
+}
+
+#svg {
+    max-height: 50vh;
+}
+
 #svgg path {
     stroke-dasharray: 400px;
     stroke-dashoffset: 400px;
-    animation: dash 5s linear forwards;
+    animation: dash 15s linear infinite;
+}
+
+iframe > body {
+    background-color: blue;
 }
 
 @keyframes dash {
-    to {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    50% {
         stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 1000;
     }
 }

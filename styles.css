@@ -22,7 +22,7 @@ body {
     min-width: 300px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
     .grid-container {
         display: flex;
         flex-direction: column;
